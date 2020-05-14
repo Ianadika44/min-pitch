@@ -1,32 +1,22 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
-app = Flask(__name__)
-
-
-app.config['SECRET_KEY'] = 'f7266d21c86028741a1b8f2c9ce6d43f'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
-
-from models import User,Post
+from flask import render_template, url_for, flash, redirect
+from pitch import app
+from pitch.forms import RegistrationForm, LoginForm
+from pitch.models import User, Post
 
 
 posts = [
     {
-        'author': 'Ian Adika',
-        'title': 'Pitch Post 1',
-        'content': 'First Post Content',
-        'date_posted': 'April 20,2019'
+        'author': 'Corey Schafer',
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'April 20, 2018'
     },
     {
-        'author': 'Lucky Oula',
-        'title': 'Pitch Post 2',
-        'content': 'Second Post Content',
-        'date_posted': 'April 21,2019'
+        'author': 'Jane Doe',
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'April 21, 2018'
     }
-
 ]
 
 
@@ -60,7 +50,3 @@ def login():
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
