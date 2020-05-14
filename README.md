@@ -1,9 +1,8 @@
 ## NAME
 - ONE-MIN PITCH APP
 
-
-<!-- ## DESCRIPTION
--  BLOG-APP is a personal blogging website where you can     create and share your opinions and other users can        read and update them. 
+- ## DESCRIPTION
+-  ONE-MIN PITCH-APP is an app that allows you to upload a pitch and others are able to view your pitches
 
 ## Author
 - Ian Adika
@@ -15,7 +14,7 @@
 - Css3
 - Bootstrap4
 
-## BDD
+<!-- ## BDD
 - As a user am able to view the blogs i have made
 - As a user i can log in and get a confirmation mail
 - As a user i can add a blog and view another persons blog
