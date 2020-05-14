@@ -2,7 +2,7 @@ import os
 import secrets
 from flask import render_template, url_for, flash, redirect, request
 from pitch import app, db, bcrypt
-from pitch.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from pitch.forms import RegistrationForm, LoginForm, UpdateAccountForm,PostForm
 from pitch.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 from PIL import Image
@@ -27,6 +27,7 @@ posts = [
 @app.route("/")
 @app.route("/home")
 def home():
+    posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
 
@@ -122,3 +123,8 @@ def new_post():
         return redirect(url_for('home'))
     return render_template('create_post.html', title='New Post',
                            form=form, legend='New Post')
+
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
