@@ -28,7 +28,8 @@
 - On the pitch,one adds the pitch title and the post
 
 ## Projects link
-- 
+- https://pitch-deploy.herokuapp.com
+
 ## CONTACT INFORMATION
 - Email:adika19ian@gmail.com.
 - Phone:0757441659.
